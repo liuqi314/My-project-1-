@@ -36,7 +36,7 @@ public class playerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if(count >=12)
+        if(count >=112)
         {
             winTextObject.SetActive(true);
         }
@@ -51,7 +51,7 @@ public class playerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("pickup2"))
+        if(other.gameObject.CompareTag("Pick up3"))
         {
             other.gameObject.SetActive(false);
             count = count + 1;
