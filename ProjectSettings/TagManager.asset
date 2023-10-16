@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pickup
   - pickup2
+  - Pick up3
   layers:
   - Default
   - TransparentFX
