@@ -9,7 +9,7 @@ public class playerController : MonoBehaviour
     public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
-    public Gameover gameover;  // Reference to the Gameover script
+    public GameoverScreen2 gameover;  // Reference to the Gameover script
 
     private Rigidbody rb;
     private int count;
