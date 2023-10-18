@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
     public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public GameoverScreen2 gameover;  // Reference to the Gameover script
 
     private Rigidbody rb;
     private int count;
@@ -23,6 +24,7 @@ public class playerController : MonoBehaviour
 
         SetCountText();
         winTextObject.SetActive(false);
+        gameover.gameObject.SetActive(false); // Initially hide the Gameover screen
     }
 
     private void OnMove(InputValue movementValue)
@@ -58,7 +60,44 @@ public class playerController : MonoBehaviour
 
             SetCountText();
         }
-       
+         
     }
+   
+    private bool gameEnded = false;
+
+    void Update()
+    {
+        if (transform.position.y < -10)  // change the Y threshold as needed
+        {
+            EndGame();
+        
+        }
+
+
+    }
+
+    void EndGame()
+    {
+         if (!gameEnded)
+        {
+             gameEnded = true;
+            winTextObject.SetActive(true);
+
+            // Pass the score to the Gameover script
+
+            gameover.Setup(count);
+
+        }
+    
+    
+    
+
+    }
+
+
+
 }
+
+
+
 
