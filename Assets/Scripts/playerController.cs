@@ -81,10 +81,8 @@ public class playerController : MonoBehaviour
          if (!gameEnded)
         {
              gameEnded = true;
-            winTextObject.SetActive(true);
 
             // Pass the score to the Gameover script
-
             gameover.Setup(count);
 
         }

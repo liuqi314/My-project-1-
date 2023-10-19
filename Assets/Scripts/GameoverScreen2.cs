@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class GameoverScreen2 : MonoBehaviour
@@ -14,5 +15,25 @@ public class GameoverScreen2 : MonoBehaviour
     public void Setup(int score) {
         gameObject.SetActive(true);
         pointsText.text = score.ToString() + " POINTS";
+    
     }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene("Minigame");
+    }
+
+    public void ExitButton()
+    {
+        SceneManager.LoadScene("Main Menu");
+
+    }
+
+
+
 }
+
+
+
+
+
