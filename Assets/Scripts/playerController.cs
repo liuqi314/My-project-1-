@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +10,7 @@ public class playerController : MonoBehaviour
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     public GameoverScreen2 gameover;  // Reference to the Gameover script
+    public GameWin GameWin; // Reference to the GameWin script
 
     private Rigidbody rb;
     private int count;
@@ -25,6 +26,19 @@ public class playerController : MonoBehaviour
         SetCountText();
         winTextObject.SetActive(false);
         gameover.gameObject.SetActive(false); // Initially hide the Gameover screen
+        GameWin = FindObjectOfType<GameWin>();
+
+        if (GameWin == null ) 
+        {
+            Debug.LogError("GameWin object not found or not assigned.");
+        
+        }
+        else 
+        { 
+        
+            GameWin.gameObject.SetActive(false);
+        
+        }
     }
 
     private void OnMove(InputValue movementValue)
@@ -40,7 +54,12 @@ public class playerController : MonoBehaviour
         countText.text = "Count: " + count.ToString();
         if(count >=100)
         {
-            winTextObject.SetActive(true);
+            GameWin.gameObject.SetActive(true);
+
+            // Pass the score to the GameWin script
+            GameWin.Setup(count);
+
+            
         }
     }
 
