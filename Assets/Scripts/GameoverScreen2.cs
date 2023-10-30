@@ -20,7 +20,9 @@ public class GameoverScreen2 : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("Level3");
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+
     }
 
     public void ExitButton()

@@ -52,7 +52,7 @@ public class playerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if(count >=100)
+        if(count >=90)
         {
             GameWin.gameObject.SetActive(true);
 
