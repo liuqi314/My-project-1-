@@ -7,6 +7,7 @@ TagManager:
   - Pickup
   - pickup2
   - Pick up3
+  - Audio
   layers:
   - Default
   - TransparentFX

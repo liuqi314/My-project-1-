@@ -17,6 +17,13 @@ public class playerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +54,7 @@ public class playerController : MonoBehaviour
 
         movementX = movementVector.x;
         movementY = movementVector.y;
+        audioManager.PlaySFX(audioManager.wallhit);
     }
 
     void SetCountText()
@@ -58,8 +66,8 @@ public class playerController : MonoBehaviour
 
             // Pass the score to the GameWin script
             GameWin.Setup(count);
+            audioManager.PlaySFX(audioManager.win);
 
-            
         }
     }
 
@@ -78,7 +86,9 @@ public class playerController : MonoBehaviour
             count = count + 1;
 
             SetCountText();
+            audioManager.PlaySFX(audioManager.pickup);
         }
+
          
     }
    
@@ -103,7 +113,7 @@ public class playerController : MonoBehaviour
 
             // Pass the score to the Gameover script
             gameover.Setup(count);
-
+            audioManager.PlaySFX(audioManager.death);
         }
     
     
