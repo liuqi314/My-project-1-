@@ -19,10 +19,15 @@ public class playerController : MonoBehaviour
 
     AudioManager audioManager;
 
+    
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
+    
+    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +72,7 @@ public class playerController : MonoBehaviour
             // Pass the score to the GameWin script
             GameWin.Setup(count);
             audioManager.PlaySFX(audioManager.win);
-
+            
         }
     }
 
@@ -87,6 +92,7 @@ public class playerController : MonoBehaviour
 
             SetCountText();
             audioManager.PlaySFX(audioManager.pickup);
+            
         }
 
          

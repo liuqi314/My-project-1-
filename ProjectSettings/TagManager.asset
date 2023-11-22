@@ -8,6 +8,7 @@ TagManager:
   - pickup2
   - Pick up3
   - Audio
+  - Coin
   layers:
   - Default
   - TransparentFX
