@@ -12,10 +12,14 @@ public class playerController : MonoBehaviour
     public GameoverScreen2 gameover;  // Reference to the Gameover script
     public GameWin GameWin; // Reference to the GameWin script
 
+    public CoinCollect coinCollect;
+
     private Rigidbody rb;
     private int count;
     private float movementX;
     private float movementY;
+
+    private bool animationPlayed = false;
 
     AudioManager audioManager;
 
@@ -51,6 +55,20 @@ public class playerController : MonoBehaviour
             GameWin.gameObject.SetActive(false);
         
         }
+
+        coinCollect = FindObjectOfType<CoinCollect>();
+
+        if (coinCollect == null)
+        {
+            Debug.LogError("CoinCollect script not found or not assigned.");
+        }
+
+
+
+
+
+
+
     }
 
     private void OnMove(InputValue movementValue)
@@ -87,17 +105,31 @@ public class playerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Pick up3"))
         {
-            other.gameObject.SetActive(false);
+            // 玩家触碰到Pick up3时的逻辑
+            other.gameObject.SetActive(false); // 让Pick up3消失
+            Vector3 currentPosition = other.transform.position;
             count = count + 1;
+            
 
             SetCountText();
             audioManager.PlaySFX(audioManager.pickup);
-            
+
+
+            if (coinCollect != null)
+            {
+                coinCollect.PlayAnimation();
+            }
+
+
+
+
         }
 
          
     }
    
+
+
     private bool gameEnded = false;
 
     void Update()
