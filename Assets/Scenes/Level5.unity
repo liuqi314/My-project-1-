@@ -1760,6 +1760,7 @@ GameObject:
   - component: {fileID: 171376481}
   - component: {fileID: 171376480}
   - component: {fileID: 171376479}
+  - component: {fileID: 171376482}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -1868,6 +1869,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171376477}
   m_CullTransparentMesh: 1
+--- !u!114 &171376482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171376477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e111b93b7494a4b95905f145112b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level6: 0
 --- !u!4 &174193965 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4264248930461982055, guid: e71e541f5e94bd04ab2225aa756bdace,
@@ -37166,7 +37180,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.12, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 110974252}
